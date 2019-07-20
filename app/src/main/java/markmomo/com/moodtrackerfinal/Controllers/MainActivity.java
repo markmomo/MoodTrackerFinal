@@ -20,6 +20,7 @@ import java.util.Calendar;
 import markmomo.com.moodtrackerfinal.R;
 import markmomo.com.moodtrackerfinal.Tools.AlarmBroadcastReceiver;
 import markmomo.com.moodtrackerfinal.Tools.MoodsFragmentPagerAdapter;
+import markmomo.com.moodtrackerfinal.Tools.VerticalViewPager;
 
 import static markmomo.com.moodtrackerfinal.Tools.Preferences.fillHistoryPrefsIfEmpty;
 import static markmomo.com.moodtrackerfinal.Tools.Preferences.getCurrentMoodFromPrefs;
@@ -29,7 +30,7 @@ import static markmomo.com.moodtrackerfinal.Tools.Preferences.putCurrentMoodInPr
 
 public class MainActivity extends AppCompatActivity {
     private ImageButton mCommentIcon,mHistoryIcon;
-    private ViewPager mViewPager;
+    private VerticalViewPager mViewPager;
 
 
     @Override
