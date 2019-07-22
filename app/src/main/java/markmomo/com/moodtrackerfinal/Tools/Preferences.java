@@ -102,19 +102,19 @@ public class Preferences {
             putCommentsHistoryStringInPrefs("no comment,;,;;,;;no comment,;,;;,;;no comment,;,;;,;;no comment,;,;;,;;no comment,;,;;,;;no comment,;,;;,;;no comment");
     }
 
-    public static void buildMoodsAndCommentsHistoryInPrefs(Context context) {
+    static void buildMoodsAndCommentsHistoryInPrefs(Context context) {
 
         putMoodsHistoryStringInPrefs(getCurrentMoodFromPrefs(context)+","+ getMoodsHistoryStringFromPrefs(context));
         putCommentsHistoryStringInPrefs(getCurrentCommentFromPrefs(context)+",;,;;,;;"+ getCommentHistoryStringFromPrefs(context));
     }
 
-    public static void resetCurrentDataInPrefs (Context context){
+    static void resetCurrentDataInPrefs (Context context){
 
         putCurrentMoodInPrefs(context,"5");
         putCurrentCommentInPrefs(context,"no comment");
     }
 
-    public static String getActivityStatusFromPrefs(Context context) {
+    static String getActivityStatusFromPrefs(Context context) {
         declarePrefsService(context);
         String appStatus;
         appStatus = mPrefs.getString(ACTIVITY_STATUS, "default");
@@ -141,7 +141,7 @@ public class Preferences {
         System.out.println("--------------------------------------------------\n");
     }
 
-    public static void resizePrefs(Context context){
+    static void resizePrefs(Context context){
 
         ArrayList<String> moodsArray;
         moodsArray = getMoodsHistoryArrayFromPrefs(context);
@@ -177,11 +177,5 @@ public class Preferences {
         commentsHistoryResized += commentsArray.get(6);
 
         putCommentsHistoryStringInPrefs(commentsHistoryResized);
-    }
-
-    public static void deletePreferences (Context context){
-        declarePrefsService(context);
-
-        mPrefs.edit().clear().apply();
     }
 }
