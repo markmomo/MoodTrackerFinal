@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText commentBox = new EditText(context);
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
 
-        alert.setMessage("Cancel to keep last note\nOk to delete last note");
+        alert.setMessage("Cancel to keep last comment\nOk to delete last comment");
         alert.setTitle("comment");
         alert.setView(commentBox);
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
